@@ -13,7 +13,8 @@
   "license": "MIT",
   "author": "",
   "type": "module",
-  "main": "index.js",
+  "main": "./api/index.js",
+  "types": "./api/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
