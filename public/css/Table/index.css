@@ -1,0 +1,140 @@
+.table-wrapper {
+    width: 100%;
+    min-height: calc(100vh - 90px);
+    border-radius: var(--large-border-radius);
+    border: 1px solid var(--gray-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.table-wrapper.subtable {
+    min-height: 50vh;
+    height: 50vh;
+}
+
+.table-container {
+    overflow: auto;
+    flex: 1;
+}
+
+.table-header {
+    padding: var(--small-padding) var(--big-padding);
+    flex-shrink: 0;
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    min-width: 100%;
+    width: max-content;
+}
+
+.table-footer {
+    padding: var(--small-padding);
+    border-top: 1px solid var(--gray-color);
+    flex-shrink: 0;
+}
+
+.table th {
+    background: white;
+    position: relative;
+}
+
+.table .th-round:first-child {
+    border-top-left-radius: var(--border-radius);
+}
+
+.table .th-round:last-child {
+    border-top-right-radius: var(--border-radius);
+}
+
+.table .th-round {
+    border-top: 0px !important;
+}
+
+.table thead tr {
+    position: sticky;
+    top: 0;
+}
+
+.table th {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+    background-color: var(--neutral-color);
+    font-weight: normal;
+    font-size: var(--normal-font-size);
+    padding: var(--half-padding);
+    text-align: left;
+    border-top: 1px solid var(--gray-color);
+    border-right: 1px solid var(--gray-color);
+    border-bottom: 1px solid var(--gray-color);
+    height: 20px;
+    position: relative;
+}
+
+.table td {
+    font-size: var(--normal-font-size);
+    padding: var(--half-padding);
+    text-align: left;
+    border-right: 1px solid var(--gray-color);
+    border-bottom: 1px solid var(--gray-color);
+    height: 20px;
+}
+
+.table th:last-child,
+.table td:last-child {
+    border-right: none;
+}
+
+.table th.active-asc,
+.table th.active-desc {
+    color: var(--main-color);
+    padding-right: 22px;
+}
+
+.table th.active-desc::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-image: url("/assets/chev-down.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.table th.active-asc::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    background-image: url("/assets/chev-down.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.table .resizer {
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: col-resize;
+    user-select: none;
+    z-index: 1;
+}
+
+.checkbox-cell {
+    width: 16px;
+    text-align: center;
+}

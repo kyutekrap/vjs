@@ -1,0 +1,47 @@
+.select {
+    position: relative;
+}
+
+.select .input {
+    cursor: pointer;
+}
+
+.select .optionContainer {
+    display: none;
+    border-radius: var(--border-radius);
+    position: absolute;
+    top: 32px;
+    border: 1px solid var(--gray-color);
+    z-index: 1;
+    background-color: var(--bg-color);
+    padding: var(--quarter-padding) 0px;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    width: calc(100% - var(--quarter-padding) / 2);
+}
+
+.select .optionContainer.open {
+    display: block;
+}
+
+.select .option {
+    display: block;
+    cursor: pointer;
+    padding: var(--quarter-padding);
+}
+
+.select .option:hover {
+    background-color: var(--light-gray-color);
+}
+
+.select .option.filter {
+    display: none;
+}
+
+@media (max-width: 576px) {
+    .select {
+        width: calc(100% - var(--half-padding) - 2px);
+    }
+}

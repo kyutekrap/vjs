@@ -1,0 +1,23 @@
+.hBox {
+    display: flex;
+    align-items: center;
+    gap: var(--half-padding);
+}
+
+.hBox.left {
+    flex-direction: row;
+}
+
+.hBox.right {
+    flex-direction: row-reverse;
+}
+
+.hBox.hoverable {
+    cursor: pointer;
+    padding: var(--quarter-padding);
+    transition: ease-in 0.3s;
+}
+
+.hBox.hoverable:hover {
+    background-color: var(--gray-color);
+}

@@ -1,0 +1,93 @@
+.input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: inherit;
+    font-size: var(--normal-font-size);
+    background: var(--background);
+    padding: var(--quarter-padding);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--gray-color);
+}
+
+.input.readOnly {
+    background-color: var(--light-gray-color);
+}
+
+.input:focus {
+    outline: none;
+}
+
+.input[type="number"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    outline: none;
+    font-family: inherit;
+    font-size: var(--normal-font-size);
+}
+
+.input[type="number"]::-webkit-inner-spin-button,
+.input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input[type="number"]::-moz-inner-spin-button {
+    display: none;
+}
+
+.input[type="datetime-local"],
+.input[type="date"],
+.input[type="time"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    box-sizing: border-box;
+    padding: var(--quarter-padding);
+    font-family: inherit;
+    font-size: var(--normal-font-size);
+    line-height: var(--normal-font-size);
+    background: none;
+}
+
+.input[type="checkbox"],
+.input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px !important;
+    height: 16px !important;
+    cursor: pointer;
+    border: 1px solid var(--dark-gray-color);
+    border-radius: var(--border-radius);
+    background-color: white;
+    display: inline-grid;
+    place-content: center;
+}
+
+.input[type="radio"] {
+    border-radius: 50%;
+}
+
+.input[type="checkbox"]:checked,
+.input[type="radio"]:checked {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.input[type="checkbox"]:checked::before {
+    content: "";
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+@media (max-width: 576px) {
+    .input {
+        width: 100%;
+    }
+}

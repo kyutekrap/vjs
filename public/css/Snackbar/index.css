@@ -1,0 +1,17 @@
+.snackbar {
+    position: fixed;
+    bottom: var(--padding);
+    left: var(--padding);
+    padding: var(--small-padding) var(--half-padding);
+    color: var(--text-color);
+    background-color: var(--neutral-color);
+    font-size: var(--small-font-size);
+    display: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    min-width: 300px;
+    border-radius: var(--border-radius);
+}
+
+.snackbar.open {
+    display: flex;
+}

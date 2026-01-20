@@ -1,0 +1,14 @@
+.appBar {
+    width: calc(100% * var(--section-width-default));
+    display: flex;
+    margin: auto;
+    background-color: var(--bg-color);
+    padding: var(--padding) 0px;
+    height: 30px;
+}
+
+@media (max-width: 768px) {
+    .appBar {
+        width: calc(100% * var(--section-width-mobile));
+    }
+}

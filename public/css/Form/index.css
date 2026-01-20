@@ -1,0 +1,19 @@
+.form {
+    border-radius: var(--large-border-radius);
+    border: 1px solid var(--gray-color);
+}
+
+.form form {
+    padding: var(--small-padding);
+    padding-bottom: 0px;
+}
+
+.form .form-header {
+    padding: var(--small-padding) var(--big-padding);
+    border-bottom: 1px solid var(--gray-color);
+}
+
+.form .form-footer {
+    padding: var(--small-padding);
+    border-top: 1px solid var(--gray-color);
+}

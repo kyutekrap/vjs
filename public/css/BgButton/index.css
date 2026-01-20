@@ -1,0 +1,16 @@
+.bgButton {
+    background-color: "transparent";
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: var(--quarter-padding);
+}
+
+.bgButton:hover, .bgButton.active {
+    background-color: var(--light-gray-color);
+}
+
+.bgButton.rounded {
+    border-radius: 50%;
+}

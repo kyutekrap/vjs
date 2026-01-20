@@ -1,0 +1,32 @@
+.accordion {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.accordion .accordion-header {
+    cursor: pointer;
+}
+
+.accordion .accordion-header .chev-down-icon {
+    display: inline-block;
+    transition: transform 0.1s ease;
+}
+
+.accordion .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 300ms ease, opacity 200ms ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.accordion.open .accordion-content {
+    max-height: 1000px;
+    opacity: 1;
+}
+
+.accordion.open .accordion-header .chev-down-icon {
+    transform: rotate(180deg);
+}

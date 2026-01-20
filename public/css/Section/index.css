@@ -1,0 +1,17 @@
+.section {
+    width: calc(100% * var(--section-width-default));
+    display: flex;
+    margin: auto;
+    padding-bottom: var(--half-padding);
+}
+
+.section.center {
+    width: 40vw;
+    margin-top: 20vh;
+}
+
+@media (max-width: 768px) {
+    .section, .section.center {
+        width: calc(100% * var(--section-width-mobile));
+    }
+}
