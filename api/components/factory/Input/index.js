@@ -16,7 +16,6 @@ export class InputFactory {
         else {
             if ((this._props.editable ?? true) === false) {
                 input.readOnly = true;
-                input.classList.add("readOnly");
             }
         }
         input.style.width = this._props.width ?? "100%";

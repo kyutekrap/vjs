@@ -13,7 +13,6 @@ export class TextareaFactory {
         textarea.classList.add("textarea");
         if (!(this._props.editable ?? true)) {
             textarea.readOnly = true;
-            textarea.classList.add("readOnly");
         }
         textarea.placeholder = this._props.placeholder ?? "";
         textarea.value = this._props.value ?? "";

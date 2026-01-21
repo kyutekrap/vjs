@@ -6,8 +6,9 @@ export class TextareaFactory {
     createTextarea() {
         const textarea = document.createElement("textarea");
         textarea.classList.add("textarea");
-        if (!(this._props.editable ?? true))
+        if (!(this._props.editable ?? true)) {
             textarea.readOnly = true;
+        }
         textarea.placeholder = this._props.placeholder ?? "";
         textarea.value = this._props.value ?? "";
         textarea.rows = this._props.lines;
