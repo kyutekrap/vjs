@@ -88,9 +88,6 @@ export class TableBase extends TableFactory {
     _getSelectedRows() {
         return super.getSelectedRows(this._rowSection);
     }
-    _addData(data) {
-        this._props.data.push(...data);
-    }
     _rearrangeHeader(columns) {
         super.rearrangeHeaders(this._table, columns);
         this._fillData(this._props.data, columns.map(col => col.value));

@@ -17,13 +17,11 @@ export declare abstract class TableBase extends TableFactory {
     abstract fillData(data: Record<string, TableCell>[], columns: string[]): void;
     abstract onSort(columnIndex: number): void;
     abstract getSelectedRows(): number[];
-    abstract addData(data: Record<string, TableCell>[]): void;
     abstract rearrangeHeader(columns: TableColumn[]): void;
     abstract fillFooter(content: Node[]): void;
     _fillData(data: Record<string, TableCell>[], columns: string[]): void;
     _onSort(index: number): void;
     _getSelectedRows(): number[];
-    _addData(data: Record<string, TableCell>[]): void;
     _rearrangeHeader(columns: TableColumn[]): void;
     _fillFooter(content: Node[]): void;
 }

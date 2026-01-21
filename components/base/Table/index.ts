@@ -53,9 +53,6 @@ export abstract class TableBase extends TableFactory {
     // Get selected row indices when props.checkbox is true
     abstract getSelectedRows(): number[];
 
-    // Add data to table when paging is required
-    abstract addData(data: Record<string, TableCell>[]): void;
-
     // Rearrange header column positions
     abstract rearrangeHeader(columns: TableColumn[]): void;
 
@@ -112,10 +109,6 @@ export abstract class TableBase extends TableFactory {
 
     _getSelectedRows(): number[] {
         return super.getSelectedRows(this._rowSection);
-    }
-
-    _addData(data: Record<string, TableCell>[]): void {
-        this._props.data.push(...data);
     }
 
     _rearrangeHeader(columns: TableColumn[]): void {

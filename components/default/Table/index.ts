@@ -26,10 +26,6 @@ export class TableDefault extends TableBase {
         return super._getSelectedRows();
     }
 
-    addData(data: Record<string, TableCell>[]): void {
-        return super._addData(data);
-    }
-
     rearrangeHeader(columns: TableColumn[]): void {
         return super._rearrangeHeader(columns);
     }

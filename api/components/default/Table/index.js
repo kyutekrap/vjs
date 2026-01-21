@@ -21,9 +21,6 @@ export class TableDefault extends TableBase {
     getSelectedRows() {
         return super._getSelectedRows();
     }
-    addData(data) {
-        return super._addData(data);
-    }
     rearrangeHeader(columns) {
         return super._rearrangeHeader(columns);
     }

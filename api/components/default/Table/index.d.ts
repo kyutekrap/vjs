@@ -5,7 +5,6 @@ export declare class TableDefault extends TableBase {
     fillData(data: Record<string, TableCell>[], columns: string[]): void;
     onSort(index: number): void;
     getSelectedRows(): number[];
-    addData(data: Record<string, TableCell>[]): void;
     rearrangeHeader(columns: TableColumn[]): void;
     fillFooter(content: Node[]): void;
 }
