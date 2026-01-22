@@ -201,9 +201,15 @@ export class TableFactory {
     isExhausted(tableContainer) {
         return tableContainer.scrollTop + tableContainer.clientHeight >= tableContainer.scrollHeight;
     }
-    showSkeleton(rowSection) {
-        const skeleton = new SkeletonDefault({});
-        rowSection.appendChild(skeleton._skeleton);
+    createSkeleton(tableContainer, lines) {
+        const skeleton = new SkeletonDefault({ lines: lines });
+        tableContainer.appendChild(skeleton._skeleton);
         return skeleton._skeleton;
+    }
+    showSkeleton(skeleton) {
+        skeleton.classList.add("active");
+    }
+    hideSkeleton(skeleton) {
+        skeleton.classList.remove("active");
     }
 }

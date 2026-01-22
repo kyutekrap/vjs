@@ -217,9 +217,17 @@ export class TableFactory {
         return tableContainer.scrollTop + tableContainer.clientHeight >= tableContainer.scrollHeight;
     }
 
-    showSkeleton(rowSection: HTMLDivElement) {
-        const skeleton = new SkeletonDefault({});
-        rowSection.appendChild(skeleton._skeleton);
+    createSkeleton(tableContainer: HTMLDivElement, lines: number) {
+        const skeleton = new SkeletonDefault({ lines: lines });
+        tableContainer.appendChild(skeleton._skeleton);
         return skeleton._skeleton;
+    }
+
+    showSkeleton(skeleton: HTMLDivElement) {
+        skeleton.classList.add("active");
+    }
+
+    hideSkeleton(skeleton: HTMLDivElement) {
+        skeleton.classList.remove("active");
     }
 }

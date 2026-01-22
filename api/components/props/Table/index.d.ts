@@ -21,5 +21,6 @@ export interface TableProps extends HTMLBase {
     checkbox?: boolean;
     sortable?: boolean;
     footer?: HBoxProps;
+    skeletonLines?: number;
 }
 export {};

@@ -12,6 +12,7 @@ export class TableBase extends TableFactory {
     _rowSection;
     _tableFooter;
     _sortContext;
+    _skeleton;
     constructor(props) {
         super(props);
         this._tableWrapper = super.createTableWrapper();
@@ -36,6 +37,9 @@ export class TableBase extends TableFactory {
         }
         if (props.footer) {
             this._tableFooter = super.createTableFooter(this._tableWrapper);
+        }
+        if (props.skeletonLines) {
+            this._skeleton = super.createSkeleton(this._tableContainer, props.skeletonLines);
         }
     }
     _fillData(data, columns) {

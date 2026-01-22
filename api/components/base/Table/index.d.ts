@@ -13,6 +13,7 @@ export declare abstract class TableBase extends TableFactory {
     _rowSection: HTMLTableSectionElement;
     _tableFooter: HTMLDivElement | undefined;
     _sortContext: SortContext | undefined;
+    _skeleton: HTMLDivElement | undefined;
     constructor(props: TableProps);
     abstract fillData(data: Record<string, TableCell>[], columns: string[]): void;
     abstract onSort(columnIndex: number): void;

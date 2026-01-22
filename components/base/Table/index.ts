@@ -16,6 +16,7 @@ export abstract class TableBase extends TableFactory {
     _rowSection: HTMLTableSectionElement;
     _tableFooter: HTMLDivElement | undefined;
     _sortContext: SortContext | undefined;
+    _skeleton: HTMLDivElement | undefined;
 
     constructor(props: TableProps) {
         super(props);
@@ -41,6 +42,9 @@ export abstract class TableBase extends TableFactory {
         }
         if (props.footer) {
             this._tableFooter = super.createTableFooter(this._tableWrapper);
+        }
+        if (props.skeletonLines) {
+            this._skeleton = super.createSkeleton(this._tableContainer, props.skeletonLines);
         }
     }
 
