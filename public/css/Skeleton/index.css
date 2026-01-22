@@ -1,7 +1,7 @@
 .skeleton {
-    display: flex;
     flex-direction: column;
     gap: var(--padding);
+    display: none;
 }
 
 .skeleton .line {
@@ -31,4 +31,8 @@
     100% {
         background-position: 0 50%;
     }
+}
+
+.skeleton.active {
+    display: flex;
 }
