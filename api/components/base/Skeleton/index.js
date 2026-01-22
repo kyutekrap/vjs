@@ -1,4 +1,4 @@
-import { SkeletonFactory } from "../../factory/index.js";
+import { SkeletonFactory } from "../../factory/Skeleton/index.js";
 export class SkeletonBase extends SkeletonFactory {
     _skeleton;
     _lines;

@@ -1,5 +1,5 @@
-import { SkeletonFactory } from "../../factory/index.js";
-import { SkeletonProps } from "../../props/index.js";
+import { SkeletonFactory } from "../../factory/Skeleton/index.js";
+import { SkeletonProps } from "../../props/Skeleton/index.js";
 
 export class SkeletonBase extends SkeletonFactory {
 

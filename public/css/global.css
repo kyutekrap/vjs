@@ -28,6 +28,7 @@
 @import url('/css/StyledInput/index.css');
 @import url('/css/Loader/index.css');
 @import url('/css/IFrame/index.css');
+@import url('/css/Skeleton/index.css');
 
 :root {
     --bg-color: #ffffff;
