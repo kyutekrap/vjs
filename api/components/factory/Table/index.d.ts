@@ -18,4 +18,5 @@ export declare class TableFactory {
     getSelectedRows(rowSection: HTMLTableSectionElement): number[];
     enableResizing(table: HTMLTableElement): void;
     isExhausted(tableContainer: HTMLDivElement): boolean;
+    showSkeleton(rowSection: HTMLDivElement): HTMLDivElement;
 }

@@ -4,6 +4,7 @@ import { HBoxDefault } from "../../default/HBox/index.js";
 import { SpanDefault } from "../../default/Span/index.js";
 import { LinkDefault } from "../../default/Link/index.js";
 import { SelectDefault } from "../../default/Select/index.js";
+import { SkeletonDefault } from "../../default/Skeleton/index.js";
 
 export class TableFactory {
 
@@ -214,5 +215,11 @@ export class TableFactory {
 
     isExhausted(tableContainer: HTMLDivElement): boolean {
         return tableContainer.scrollTop + tableContainer.clientHeight >= tableContainer.scrollHeight;
+    }
+
+    showSkeleton(rowSection: HTMLDivElement) {
+        const skeleton = new SkeletonDefault({});
+        rowSection.appendChild(skeleton._skeleton);
+        return skeleton._skeleton;
     }
 }

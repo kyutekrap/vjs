@@ -3,6 +3,7 @@ import { HBoxDefault } from "../../default/HBox/index.js";
 import { SpanDefault } from "../../default/Span/index.js";
 import { LinkDefault } from "../../default/Link/index.js";
 import { SelectDefault } from "../../default/Select/index.js";
+import { SkeletonDefault } from "../../default/Skeleton/index.js";
 export class TableFactory {
     _props;
     _checkbox;
@@ -199,5 +200,10 @@ export class TableFactory {
     }
     isExhausted(tableContainer) {
         return tableContainer.scrollTop + tableContainer.clientHeight >= tableContainer.scrollHeight;
+    }
+    showSkeleton(rowSection) {
+        const skeleton = new SkeletonDefault({});
+        rowSection.appendChild(skeleton._skeleton);
+        return skeleton._skeleton;
     }
 }
