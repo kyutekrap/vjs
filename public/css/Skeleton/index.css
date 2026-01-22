@@ -1,11 +1,11 @@
 .skeleton {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--padding);
 }
 
 .skeleton .line {
-    height: 1rem;
+    height: var(--padding);
     width: 100%;
     background: linear-gradient(
         90deg,
@@ -18,10 +18,10 @@
     border-radius: 4px;
 }
 
-.table-container .skeleton .line {
+.table-container .skeleton {
     width: calc(100% - 2rem);
     margin: auto;
-    margin-top: 1rem;
+    margin-top: var(--padding);
 }
 
 @keyframes skeleton-loading {
