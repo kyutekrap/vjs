@@ -1,7 +1,7 @@
 import { SkeletonFactory } from "../../factory/Skeleton/index.js";
 export class SkeletonBase extends SkeletonFactory {
     _skeleton;
-    _lines;
+    _lines = [];
     constructor(props) {
         super(props);
         this._skeleton = super.createContainer();

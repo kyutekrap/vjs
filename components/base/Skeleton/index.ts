@@ -4,7 +4,7 @@ import { SkeletonProps } from "../../props/Skeleton/index.js";
 export class SkeletonBase extends SkeletonFactory {
 
     _skeleton: HTMLDivElement;
-    _lines: HTMLDivElement[];
+    _lines: HTMLDivElement[] = [];
 
     constructor(props: SkeletonProps) {
         super(props);
