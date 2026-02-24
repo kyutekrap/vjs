@@ -62,6 +62,7 @@ export class TableFactory {
             })._input;
             th.appendChild(this._checkbox);
             th.classList.add("checkbox-cell");
+            th.classList.add("tight");
             tr.appendChild(th);
         }
         this._props.columns.forEach(column => {
@@ -92,6 +93,7 @@ export class TableFactory {
             });
             td.appendChild(checkbox._input);
             td.classList.add("checkbox-cell");
+            td.classList.add("tight");
             tr.appendChild(td);
         }
         return tr;
@@ -123,6 +125,7 @@ export class TableFactory {
                     checked: content.checked,
                     editable: content?.editable ?? true
                 });
+                td.classList.add("checkbox-cell");
                 td.appendChild(checkbox._input);
                 attachEvents(checkbox._input, content.events);
             } else if (content?.list && content?.editable) {
