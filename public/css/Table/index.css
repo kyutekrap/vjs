@@ -135,7 +135,7 @@
 }
 
 .checkbox-cell {
-    text-align: center;
+    text-align: center !important;
 }
 
 .checkbox-cell.tight {
