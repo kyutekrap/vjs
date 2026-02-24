@@ -119,8 +119,6 @@ export class TableFactory {
                 });
                 td.appendChild(checkbox._input);
                 attachEvents(checkbox._input, content.events);
-                td.style.display = "flex";
-                td.style.justifyContent = "center";
             }
             else if (content?.list && content?.editable) {
                 const select = new SelectDefault({

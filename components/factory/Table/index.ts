@@ -125,8 +125,6 @@ export class TableFactory {
                 });
                 td.appendChild(checkbox._input);
                 attachEvents(checkbox._input, content.events);
-                td.style.display = "flex";
-                td.style.justifyContent = "center";
             } else if (content?.list && content?.editable) {
                 const select = new SelectDefault({
                     options: content.list,
@@ -135,10 +133,7 @@ export class TableFactory {
                 td.appendChild(select._select);
                 attachEvents(select._select, content.events);
             } else {
-                const span = document.createElement("span")
-                span.textContent = content?.value;
-                td.appendChild(span)
-
+                td.textContent = content?.value;
                 attachEvents(td, content.events);
             }
         }
