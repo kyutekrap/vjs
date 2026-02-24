@@ -135,7 +135,10 @@ export class TableFactory {
                 td.appendChild(select._select);
                 attachEvents(select._select, content.events);
             } else {
-                td.textContent = content?.value;
+                const span = document.createElement("span")
+                span.textContent = content?.value;
+                td.appendChild(span)
+
                 attachEvents(td, content.events);
             }
         }
