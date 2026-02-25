@@ -26,3 +26,4 @@ export * from "./Line/index.js";
 export * from "./Box/index.js";
 export * from "./Loader/index.js";
 export * from "./IFrame/index.js";
+export * from "./Skeleton/index.js";
