@@ -47,11 +47,6 @@ export class SelectFactory {
                     optionContainer.classList.add("open");
                 }
             });
-            if (this._props.searchable) {
-                input.addEventListener("keyup", (e) => {
-                    this.filterItems(optionContainer, e.target.value);
-                });
-            }
         }
         return optionContainer;
     }
