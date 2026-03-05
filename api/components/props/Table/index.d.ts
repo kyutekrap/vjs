@@ -12,6 +12,7 @@ export interface TableCell {
     checked?: boolean;
     editable?: boolean;
     list?: string[];
+    textAlign?: "left" | "center" | "right";
     events?: Partial<Record<EventType, (e: any) => void>>;
 }
 export interface TableProps extends HTMLBase {

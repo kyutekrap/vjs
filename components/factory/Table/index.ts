@@ -140,6 +140,9 @@ export class TableFactory {
                 attachEvents(td, content.events);
             }
         }
+
+        td.style.textAlign = content?.textAlign ?? "left";
+        
         return td;
     }
 
