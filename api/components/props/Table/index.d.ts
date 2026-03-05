@@ -6,6 +6,7 @@ export interface TableColumn {
 }
 type EventType = "click" | "change";
 export interface TableCell {
+    label?: string;
     value: any;
     href?: string;
     checked?: boolean;

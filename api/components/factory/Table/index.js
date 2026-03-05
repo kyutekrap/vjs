@@ -106,7 +106,7 @@ export class TableFactory {
             const link = new LinkDefault({
                 variant: "primary",
                 href: content.href,
-                text: content?.value,
+                text: content?.label ?? content?.value,
                 size: "small"
             });
             td.appendChild(link._link);
@@ -132,7 +132,7 @@ export class TableFactory {
                 attachEvents(select._select, content.events);
             }
             else {
-                td.textContent = content?.value;
+                td.textContent = content?.label ?? content?.value;
                 attachEvents(td, content.events);
             }
         }
