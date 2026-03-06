@@ -106,10 +106,6 @@ export class TableFactory {
             tr.appendChild(td);
         }
 
-        if (this._props?.fixedBottomRow && index === this._props.data.length - 1) {
-            tr.classList.add("fixed-bottom");
-        }
-
         return tr;
     }
 
@@ -159,8 +155,14 @@ export class TableFactory {
 
         if (this._props?.fixedLeftColumn && idx === 0) {
             td.classList.add("fixed-left");
-        } else if (this._props?.fixedRightColumn && idx === this._props.columns.length - 1) {
+        }
+        
+        if (this._props?.fixedRightColumn && idx === this._props.columns.length - 1) {
             td.classList.add("fixed-right");
+        }
+
+        if (this._props?.fixedBottomRow && idx === this._props.data.length - 1) {
+            td.classList.add("fixed-bottom");
         }
 
         return td;
