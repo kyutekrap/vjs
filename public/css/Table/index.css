@@ -146,19 +146,19 @@
     position: sticky;
     left: 0;
     z-index: 1;
-    background: var(--bg-color);
+    background: var(--neutral-color);
 }
 
 .table .fixed-right {
     position: sticky;
     right: 0;
     z-index: 1;
-    background: var(--bg-color);
+    background: var(--neutral-color);
 }
 
 .table .fixed-bottom {
     position: sticky;
     bottom: 0;
-    z-index: 1;
-    background: var(--bg-color);
+    z-index: 2;
+    background: var(--neutral-color);
 }

@@ -56,11 +56,17 @@ export class TableFactory {
             th.classList.add("tight");
             tr.appendChild(th);
         }
-        this._props.columns.forEach(column => {
+        this._props.columns.forEach((column, idx) => {
             const th = document.createElement("th");
             th.textContent = column.label ?? column.value;
             if (!this._props.title) {
                 th.classList.add("th-round");
+            }
+            if (this._props?.fixedLeftColumn && idx === 0) {
+                th.classList.add("fixed-left");
+            }
+            else if (this._props?.fixedRightColumn && idx === this._props.columns.length - 1) {
+                th.classList.add("fixed-right");
             }
             tr.appendChild(th);
         });
@@ -85,7 +91,7 @@ export class TableFactory {
             td.classList.add("tight");
             tr.appendChild(td);
         }
-        if (this._props?.fixedBottomRows && index + 1 > this._props.data.length - this._props.fixedBottomRows) {
+        if (this._props?.fixedBottomRow && index === this._props.data.length - 1) {
             tr.classList.add("fixed-bottom");
         }
         return tr;
@@ -140,10 +146,10 @@ export class TableFactory {
             }
         }
         td.style.textAlign = content?.textAlign ?? "left";
-        if (idx + 1 <= (this._props?.fixedLeftColumns ?? 0)) {
+        if (this._props?.fixedLeftColumn && idx === 0) {
             td.classList.add("fixed-left");
         }
-        else if (this._props.columns.length - (idx + 1) < (this._props?.fixedRightColumns ?? 0)) {
+        else if (this._props?.fixedRightColumn && idx === this._props.columns.length - 1) {
             td.classList.add("fixed-right");
         }
         return td;

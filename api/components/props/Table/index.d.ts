@@ -24,8 +24,8 @@ export interface TableProps extends HTMLBase {
     sortable?: boolean;
     footer?: HBoxProps;
     skeletonLines?: number;
-    fixedLeftColumns?: number;
-    fixedRightColumns?: number;
-    fixedBottomRows?: number;
+    fixedLeftColumn?: boolean;
+    fixedRightColumn?: boolean;
+    fixedBottomRow?: boolean;
 }
 export {};
