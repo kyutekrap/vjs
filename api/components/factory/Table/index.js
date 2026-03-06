@@ -93,7 +93,7 @@ export class TableFactory {
         }
         return tr;
     }
-    createCell(content, idx) {
+    createCell(content, colIdx, rowIdx) {
         const td = document.createElement("td");
         const attachEvents = (el, events) => {
             if (!events)
@@ -143,13 +143,13 @@ export class TableFactory {
             }
         }
         td.style.textAlign = content?.textAlign ?? "left";
-        if (this._props?.fixedLeftColumn && idx === 0) {
+        if (this._props?.fixedLeftColumn && colIdx === 0) {
             td.classList.add("fixed-left");
         }
-        if (this._props?.fixedRightColumn && idx === this._props.columns.length - 1) {
+        if (this._props?.fixedRightColumn && colIdx === this._props.columns.length - 1) {
             td.classList.add("fixed-right");
         }
-        if (this._props?.fixedBottomRow && idx === this._props.data.length - 1) {
+        if (this._props?.fixedBottomRow && rowIdx === this._props.data.length - 1) {
             td.classList.add("fixed-bottom");
         }
         return td;

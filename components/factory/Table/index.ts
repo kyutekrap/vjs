@@ -109,7 +109,7 @@ export class TableFactory {
         return tr;
     }
 
-    createCell(content: TableCell, idx: number): HTMLTableCellElement {
+    createCell(content: TableCell, colIdx: number, rowIdx: number): HTMLTableCellElement {
         const td = document.createElement("td");
         const attachEvents = (el: Element, events?: TableCell['events']) => {
             if (!events) return;
@@ -153,15 +153,15 @@ export class TableFactory {
 
         td.style.textAlign = content?.textAlign ?? "left";
 
-        if (this._props?.fixedLeftColumn && idx === 0) {
+        if (this._props?.fixedLeftColumn && colIdx === 0) {
             td.classList.add("fixed-left");
         }
         
-        if (this._props?.fixedRightColumn && idx === this._props.columns.length - 1) {
+        if (this._props?.fixedRightColumn && colIdx === this._props.columns.length - 1) {
             td.classList.add("fixed-right");
         }
 
-        if (this._props?.fixedBottomRow && idx === this._props.data.length - 1) {
+        if (this._props?.fixedBottomRow && rowIdx === this._props.data.length - 1) {
             td.classList.add("fixed-bottom");
         }
 

@@ -65,10 +65,10 @@ export abstract class TableBase extends TableFactory {
 
     _fillData(data: Record<string, TableCell>[], columns: string[]): void {
         let rows: Node[] = [];
-        data.forEach((rowData, index) => {
-            const tr = super.createRow(index);
-            columns.forEach((column, idx) => {
-                const td = super.createCell(rowData[column], idx);
+        data.forEach((rowData, rowIdx) => {
+            const tr = super.createRow(rowIdx);
+            columns.forEach((column, colIdx) => {
+                const td = super.createCell(rowData[column], colIdx, rowIdx);
                 tr.appendChild(td);
             });
             rows.push(tr);
