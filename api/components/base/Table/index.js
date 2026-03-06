@@ -77,7 +77,10 @@ export class TableBase extends TableFactory {
                 }
             });
             const columnName = this._props.columns[index].value;
-            this._props.data.sort((a, b) => {
+            const splitIndex = this._props.data.length - (this._props?.fixedBottomRow ? 2 : 1);
+            const mainRows = this._props.data.slice(0, splitIndex);
+            const bottomRows = this._props.data.slice(splitIndex);
+            mainRows.sort((a, b) => {
                 const aValue = a[columnName]?.value ?? "";
                 const bValue = b[columnName]?.value ?? "";
                 if (aValue < bValue)
@@ -86,6 +89,7 @@ export class TableBase extends TableFactory {
                     return newDir === "asc" ? 1 : -1;
                 return 0;
             });
+            this._props.data = mainRows.concat(bottomRows);
             this._fillData(this._props.data, this._props.columns.map(col => col.value));
         }
     }

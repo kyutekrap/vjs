@@ -164,3 +164,7 @@
     z-index: 2;
     background: var(--neutral-color);
 }
+
+.table .fixed-left.fixed-bottom, .table .fixed-right.fixed-bottom {
+    z-index: 3;
+}
