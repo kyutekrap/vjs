@@ -141,3 +141,24 @@
 .checkbox-cell.tight {
     width: 16px;
 }
+
+.table .fixed-left {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--bg-color);
+}
+
+.table .fixed-right {
+    position: sticky;
+    right: 0;
+    z-index: 1;
+    background: var(--bg-color);
+}
+
+.table .fixed-bottom {
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+    background: var(--bg-color);
+}

@@ -46,8 +46,8 @@ export class TableBase extends TableFactory {
         let rows = [];
         data.forEach((rowData, index) => {
             const tr = super.createRow(index);
-            columns.forEach(column => {
-                const td = super.createCell(rowData[column]);
+            columns.forEach((column, idx) => {
+                const td = super.createCell(rowData[column], idx);
                 tr.appendChild(td);
             });
             rows.push(tr);

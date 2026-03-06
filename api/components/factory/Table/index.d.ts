@@ -11,7 +11,7 @@ export declare class TableFactory {
     createHeader(thead: HTMLTableSectionElement): HTMLTableSectionElement;
     createRowSection(table: HTMLTableElement): HTMLTableSectionElement;
     createRow(index: number): HTMLTableRowElement;
-    createCell(content: TableCell): HTMLTableCellElement;
+    createCell(content: TableCell, idx: number): HTMLTableCellElement;
     createTableFooter(wrapper: HTMLDivElement): HTMLDivElement;
     rearrangeHeaders(table: HTMLTableElement, columns: TableColumn[]): void;
     selectAllCheckboxes(rowSection: HTMLTableSectionElement, target: HTMLInputElement): void;

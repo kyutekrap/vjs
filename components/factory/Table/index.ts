@@ -85,6 +85,7 @@ export class TableFactory {
 
     createRow(index: number): HTMLTableRowElement {
         const tr = document.createElement("tr");
+
         if (this._props.checkbox) {
             const td = document.createElement("td");
             const checkbox = new InputDefault({
@@ -96,10 +97,15 @@ export class TableFactory {
             td.classList.add("tight");
             tr.appendChild(td);
         }
+
+        if (this._props?.fixedBottomRows && index + 1 > this._props.data.length - this._props.fixedBottomRows) {
+            tr.classList.add("fixed-bottom");
+        }
+
         return tr;
     }
 
-    createCell(content: TableCell): HTMLTableCellElement {
+    createCell(content: TableCell, idx: number): HTMLTableCellElement {
         const td = document.createElement("td");
         const attachEvents = (el: Element, events?: TableCell['events']) => {
             if (!events) return;
@@ -142,7 +148,13 @@ export class TableFactory {
         }
 
         td.style.textAlign = content?.textAlign ?? "left";
-        
+
+        if (idx + 1 <= (this._props?.fixedLeftColumns ?? 0)) {
+            td.classList.add("fixed-left");
+        } else if (this._props.columns.length - (idx + 1) < (this._props?.fixedRightColumns ?? 0)) {
+            td.classList.add("fixed-right");
+        }
+
         return td;
     }
 
