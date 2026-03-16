@@ -77,7 +77,7 @@ export class TableBase extends TableFactory {
                 }
             });
             const columnName = this._props.columns[index].value;
-            const splitIndex = this._props.data.length - (this._props?.fixedBottomRow ? 2 : 1);
+            const splitIndex = this._props.data.length - (this._props?.fixedBottomRow ? 1 : 0);
             const mainRows = this._props.data.slice(0, splitIndex);
             const bottomRows = this._props.data.slice(splitIndex);
             mainRows.sort((a, b) => {
