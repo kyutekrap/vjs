@@ -21,9 +21,7 @@ class IndexedDBUtility {
             };
 
             deleteRequest.onblocked = () => {
-                console.warn(
-                    `Close other tabs using this database.`
-                );
+                alert("Browser API Warning: Close other tabs using this site");
             };
 
             deleteRequest.onsuccess = () => {
@@ -81,9 +79,9 @@ class IndexedDBUtility {
     private static reportError(error: any, context?: string) {
         try {
             if (IndexedDBUtility.onError) IndexedDBUtility.onError(error, context);
-            else console.error(error + " " + context);
+            else alert("Browser API Error: " + error + " " + context);
         } catch (e) {
-            console.error('Error reporting error', e);
+            alert("Browser API Error: " + e);
         }
     }
 

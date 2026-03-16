@@ -14,7 +14,7 @@ class IndexedDBUtility {
                 reject(event);
             };
             deleteRequest.onblocked = () => {
-                console.warn(`Close other tabs using this database.`);
+                alert("Browser API Warning: Close other tabs using this site");
             };
             deleteRequest.onsuccess = () => {
                 const openRequest = indexedDB.open(this.config.dbName);
@@ -64,10 +64,10 @@ class IndexedDBUtility {
             if (IndexedDBUtility.onError)
                 IndexedDBUtility.onError(error, context);
             else
-                console.error(error + " " + context);
+                alert("Browser API Error: " + error + " " + context);
         }
         catch (e) {
-            console.error('Error reporting error', e);
+            alert("Browser API Error: " + e);
         }
     }
     static async addData(store, data) {
