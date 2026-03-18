@@ -54,7 +54,7 @@ export class TableFactory {
     }
 
     createHeaderGroup(thead: HTMLTableSectionElement): void {
-        this._props.columnGroups.forEach((group, i) => {
+        (this._props?.columnGroups || []).forEach((group, i) => {
             const tr = document.createElement("tr");
 
             if (this._props.checkbox) {
@@ -97,7 +97,7 @@ export class TableFactory {
             const th = document.createElement("th");
             th.textContent = column.label ?? column.value;
 
-            if (!this._props.title && (this._props.columnGroups ?? []).length === 0) {
+            if (!this._props.title && (this._props?.columnGroups ?? []).length === 0) {
                 th.classList.add("th-round");
             }
 

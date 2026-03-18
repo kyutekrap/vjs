@@ -45,7 +45,7 @@ export class TableFactory {
         return thead;
     }
     createHeaderGroup(thead) {
-        this._props.columnGroups.forEach((group, i) => {
+        (this._props?.columnGroups || []).forEach((group, i) => {
             const tr = document.createElement("tr");
             if (this._props.checkbox) {
                 const th = document.createElement("th");
@@ -85,7 +85,7 @@ export class TableFactory {
         this._props.columns.forEach((column, idx) => {
             const th = document.createElement("th");
             th.textContent = column.label ?? column.value;
-            if (!this._props.title && (this._props.columnGroups ?? []).length === 0) {
+            if (!this._props.title && (this._props?.columnGroups ?? []).length === 0) {
                 th.classList.add("th-round");
             }
             if (this._props?.fixedLeftColumn && idx === 0) {
