@@ -44,6 +44,32 @@ export class TableFactory {
         table.appendChild(thead);
         return thead;
     }
+    createHeaderGroup(thead) {
+        this._props.columnGroups.forEach((group, i) => {
+            const tr = document.createElement("tr");
+            if (this._props.checkbox) {
+                const th = document.createElement("th");
+                if (!this._props.title && i === 0) {
+                    th.classList.add("th-round");
+                }
+                tr.appendChild(th);
+            }
+            group.forEach((column) => {
+                const th = document.createElement("th");
+                th.textContent = column.label;
+                if (column.rowspan)
+                    th.rowSpan = column.rowspan;
+                if (column.colspan)
+                    th.colSpan = column.colspan;
+                if (!this._props.title && i === 0) {
+                    th.classList.add("th-round");
+                }
+                th.classList.add("group");
+                tr.appendChild(th);
+            });
+            thead.appendChild(tr);
+        });
+    }
     createHeader(thead) {
         const tr = document.createElement("tr");
         if (this._props.checkbox) {
@@ -59,7 +85,7 @@ export class TableFactory {
         this._props.columns.forEach((column, idx) => {
             const th = document.createElement("th");
             th.textContent = column.label ?? column.value;
-            if (!this._props.title) {
+            if (!this._props.title && (this._props.columnGroups ?? []).length === 0) {
                 th.classList.add("th-round");
             }
             if (this._props?.fixedLeftColumn && idx === 0) {

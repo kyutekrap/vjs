@@ -22,6 +22,7 @@ export class TableBase extends TableFactory {
         this._tableContainer = super.createTableContainer(this._tableWrapper);
         this._table = super.createTable(this._tableContainer);
         this._headerSection = super.createHeaderSection(this._table);
+        super.createHeaderGroup(this._headerSection);
         super.createHeader(this._headerSection);
         this._rowSection = super.createRowSection(this._table);
         if (props.checkbox && this._checkbox) {
@@ -66,7 +67,8 @@ export class TableBase extends TableFactory {
                 this._sortContext.direction = "desc";
             }
             let newDir = this._sortContext.direction;
-            this._headerSection.querySelectorAll("th").forEach((_th, _index) => {
+            const lastTR = this._headerSection.querySelectorAll("tr").length - 1;
+            this._headerSection.querySelectorAll("tr")[lastTR].querySelectorAll("th").forEach((_th, _index) => {
                 _th.classList.remove("active-asc");
                 _th.classList.remove("active-desc");
                 if (_index === index) {

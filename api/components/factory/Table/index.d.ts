@@ -8,6 +8,7 @@ export declare class TableFactory {
     createTableContainer(wrapper: HTMLDivElement): HTMLDivElement;
     createTable(container: HTMLDivElement): HTMLTableElement;
     createHeaderSection(table: HTMLTableElement): HTMLTableSectionElement;
+    createHeaderGroup(thead: HTMLTableSectionElement): void;
     createHeader(thead: HTMLTableSectionElement): HTMLTableSectionElement;
     createRowSection(table: HTMLTableElement): HTMLTableSectionElement;
     createRow(index: number): HTMLTableRowElement;

@@ -15,9 +15,15 @@ export interface TableCell {
     textAlign?: "left" | "center" | "right";
     events?: Partial<Record<EventType, (e: any) => void>>;
 }
+export interface TableColumnGroup {
+    label: string;
+    rowspan?: number;
+    colspan?: number;
+}
 export interface TableProps extends HTMLBase {
     title?: string;
     columns: TableColumn[];
+    columnGroups?: TableColumnGroup[][];
     data: Record<string, TableCell>[];
     resizable?: boolean;
     checkbox?: boolean;
