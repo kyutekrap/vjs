@@ -12,10 +12,6 @@ export abstract class SelectBase extends SelectFactory {
         super(props);
         this._select = super.createSelect();
         this._options = props.options;
-        this._initialize(props);
-    }
-
-    private _initialize(props: SelectProps) {
         this._input = super.createInput();
         this._select.appendChild(this._input);
         this._optionContainer = super.createOptionContainer(this._input);

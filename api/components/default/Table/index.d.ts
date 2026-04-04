@@ -7,4 +7,5 @@ export declare class TableDefault extends TableBase {
     getSelectedRows(): number[];
     rearrangeHeader(columns: TableColumn[]): void;
     fillFooter(content: Node[]): void;
+    checkAllCheckboxes(e: Event): void;
 }

@@ -5,4 +5,6 @@ export declare abstract class DrawerBase extends DrawerFactory {
     _drawerContent: HTMLDivElement;
     _closeBtn: HTMLDivElement | undefined;
     constructor(props: DrawerProps);
+    abstract onClose(): void;
+    _onClose(): void;
 }

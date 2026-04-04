@@ -32,11 +32,7 @@ export abstract class TableBase extends TableFactory {
 
         super.createHeader(this._headerSection);
         this._rowSection = super.createRowSection(this._table);
-        if (props.checkbox && this._checkbox) {
-            this._checkbox.addEventListener("change", (e) => {
-                super.selectAllCheckboxes(this._rowSection, e.target as HTMLInputElement);
-            });
-        }
+        
         if (props.resizable ?? true) {
             this.enableResizing(this._table);
         }
@@ -50,6 +46,8 @@ export abstract class TableBase extends TableFactory {
             this._skeleton = super.createSkeleton(this._tableContainer, props.skeletonLines);
         }
     }
+
+    
 
     // Fill data into table row section
     abstract fillData(data: Record<string, TableCell>[], columns: string[]): void;
@@ -65,6 +63,9 @@ export abstract class TableBase extends TableFactory {
 
     // Fill footer content
     abstract fillFooter(content: Node[]): void;
+
+    // Check all checkboxes if checkbox is enabled
+    abstract checkAllCheckboxes(e: Event): void;
 
     _fillData(data: Record<string, TableCell>[], columns: string[]): void {
         let rows: Node[] = [];
@@ -134,5 +135,9 @@ export abstract class TableBase extends TableFactory {
             this._tableFooter = super.createTableFooter(this._tableWrapper);
         }
         this._tableFooter.replaceChildren(...content);
+    }
+
+    _checkAllCheckboxes(e: Event) {
+        super.selectAllCheckboxes(this._rowSection, e.target as HTMLInputElement);
     }
 }

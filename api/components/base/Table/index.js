@@ -25,11 +25,6 @@ export class TableBase extends TableFactory {
         super.createHeaderGroup(this._headerSection);
         super.createHeader(this._headerSection);
         this._rowSection = super.createRowSection(this._table);
-        if (props.checkbox && this._checkbox) {
-            this._checkbox.addEventListener("change", (e) => {
-                super.selectAllCheckboxes(this._rowSection, e.target);
-            });
-        }
         if (props.resizable ?? true) {
             this.enableResizing(this._table);
         }
@@ -107,5 +102,8 @@ export class TableBase extends TableFactory {
             this._tableFooter = super.createTableFooter(this._tableWrapper);
         }
         this._tableFooter.replaceChildren(...content);
+    }
+    _checkAllCheckboxes(e) {
+        super.selectAllCheckboxes(this._rowSection, e.target);
     }
 }

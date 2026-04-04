@@ -20,10 +20,12 @@ export declare abstract class TableBase extends TableFactory {
     abstract getSelectedRows(): number[];
     abstract rearrangeHeader(columns: TableColumn[]): void;
     abstract fillFooter(content: Node[]): void;
+    abstract checkAllCheckboxes(e: Event): void;
     _fillData(data: Record<string, TableCell>[], columns: string[]): void;
     _onSort(index: number): void;
     _getSelectedRows(): number[];
     _rearrangeHeader(columns: TableColumn[]): void;
     _fillFooter(content: Node[]): void;
+    _checkAllCheckboxes(e: Event): void;
 }
 export {};

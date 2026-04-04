@@ -12,6 +12,11 @@ export class TableDefault extends TableBase {
                 th.style.cursor = "pointer";
             });
         }
+        if (props.checkbox && this._checkbox) {
+            this._checkbox.addEventListener("change", (e) => {
+                this.checkAllCheckboxes(e);
+            });
+        }
     }
     fillData(data, columns) {
         super._fillData(data, columns);
@@ -27,5 +32,8 @@ export class TableDefault extends TableBase {
     }
     fillFooter(content) {
         return super._fillFooter(content);
+    }
+    checkAllCheckboxes(e) {
+        return super._checkAllCheckboxes(e);
     }
 }

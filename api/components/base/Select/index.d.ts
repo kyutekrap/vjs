@@ -6,7 +6,6 @@ export declare abstract class SelectBase extends SelectFactory {
     _optionContainer: HTMLDivElement;
     _options: string[];
     constructor(props: SelectProps);
-    private _initialize;
     abstract refreshOptions(options: string[]): void;
     _refreshOptions(options: string[]): void;
 }

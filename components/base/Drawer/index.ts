@@ -10,20 +10,24 @@ export abstract class DrawerBase extends DrawerFactory {
 
     constructor(props: DrawerProps) {
         super(props);
-        this._drawer = document.createElement("div");
+        this._drawer = super.createDrawer();
         this._drawer.classList.add("drawer");
         if (props.id) this._drawer.id = props.id;
 
         if (props.closeBgButton) {
-            this._closeBtn = this.createCloseBtn(props.closeBgButton, this._drawer);
-            this._closeBtn.addEventListener("click", (e) => closeDrawer());
+            this._closeBtn = super.createCloseBtn(props.closeBgButton, this._drawer);
         }
 
-        this._drawerContent = document.createElement("div");
+        this._drawerContent = super.createDrawerContent();
         this._drawerContent.classList.add("drawer-content");
-        super.addChildren(this._drawerContent);
 
         this._drawer.appendChild(this._drawerContent);
         document.body.appendChild(this._drawer);
+    }
+
+    abstract onClose(): void;
+
+    _onClose() {
+        closeDrawer();
     }
 }
