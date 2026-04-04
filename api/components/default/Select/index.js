@@ -7,8 +7,19 @@ export class SelectDefault extends SelectBase {
                 this.filterItems(this._optionContainer, e.target.value);
             });
         }
+        if (this._props.editable ?? true) {
+            this._input.addEventListener("click", (_e) => {
+                this.toggleOptionContainer();
+            });
+        }
     }
     refreshOptions(options) {
-        super._refreshOptions(options);
+        return super._refreshOptions(options);
+    }
+    filterItems(optionContainer, filterKey) {
+        return super._filterItems(optionContainer, filterKey);
+    }
+    toggleOptionContainer() {
+        return super._toggleOptionContainer();
     }
 }

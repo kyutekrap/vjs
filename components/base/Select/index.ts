@@ -19,11 +19,33 @@ export abstract class SelectBase extends SelectFactory {
     }
 
     abstract refreshOptions(options: string[]): void;
+    abstract filterItems(optionContainer: HTMLDivElement, filterKey: string): void;
+    abstract toggleOptionContainer(): void;
 
     _refreshOptions(options: string[]): void {
         const optionElements = options.map(option => super.createOption(option, this._input));
         this._optionContainer.replaceChildren(...optionElements);
         if (!options.includes(this._input.value)) this._input.value = "";
         this._options = options;
+    }
+
+    _filterItems(optionContainer: HTMLDivElement, filterKey: string): void {
+        Array.from(optionContainer.children).forEach((child) => {
+            if ((child.children[0] as HTMLSpanElement).textContent.toLowerCase().startsWith(filterKey.toLowerCase()))
+                child.classList.remove("filter");
+            else
+                child.classList.add("filter");
+        });
+    }
+
+    _toggleOptionContainer(): void {
+        if (this._optionContainer.classList.contains("open")) {
+            this._optionContainer.classList.remove("open");
+            if (this._props.searchable && !this._props.options.includes(this._input.value)) {
+                this._input.value = "";
+            }
+        } else {
+            this._optionContainer.classList.add("open");
+        }
     }
 }

@@ -35,19 +35,6 @@ export class SelectFactory {
             const option = this.createOption(this._props.options[i], input);
             optionContainer.appendChild(option);
         }
-        if (this._props.editable ?? true) {
-            input.addEventListener("click", (_e) => {
-                if (optionContainer.classList.contains("open")) {
-                    optionContainer.classList.remove("open");
-                    if (this._props.searchable && !this._props.options.includes(input.value)) {
-                        input.value = "";
-                    }
-                }
-                else {
-                    optionContainer.classList.add("open");
-                }
-            });
-        }
         return optionContainer;
     }
     createOption(text, input) {
@@ -102,13 +89,5 @@ export class SelectFactory {
             }
         }
         return optionGroup._hBox;
-    }
-    filterItems(optionContainer, filterKey) {
-        Array.from(optionContainer.children).forEach((child) => {
-            if (child.children[0].textContent.toLowerCase().startsWith(filterKey.toLowerCase()))
-                child.classList.remove("filter");
-            else
-                child.classList.add("filter");
-        });
     }
 }
